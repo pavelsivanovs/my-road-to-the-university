@@ -28,8 +28,16 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+    history: createWebHistory(process.env.NODE_ENV === 'production' ? '/my-road-to-the-university/' : '/'),
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (to.name.includes("Section")) {
+            return {
+                top: 0,
+                behavior: 'smooth'
+            }
+        }
+    }
 })
 
 export default router

@@ -1,6 +1,10 @@
 <script>
 import sourceData from '@/data.json'
 
+const getImageUrl = (image) => {
+  return new URL(`../assets/images/${image}`, import.meta.url).href
+}
+
 export default {
   data() {
     const { key } = this.$route.params
@@ -9,13 +13,14 @@ export default {
       text_eng: text, 
       image
     } = sourceData.sections[key]
+    const imageUrl = getImageUrl(image)
 
     document.title = title
     
     return {
       title,
       text,
-      image
+      imageUrl
     }
   }
 }
@@ -23,7 +28,7 @@ export default {
 
 <template>
   <div class="header">
-    <div class="hero" :style="{ backgroundImage: 'url(../../src/assets/images/' + image + ')' }">
+    <div class="hero" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
       <div class="title-wrapper">
         <h1 class="title">{{ title }}</h1>
       </div>
