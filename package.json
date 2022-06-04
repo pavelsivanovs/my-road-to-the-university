@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.0.1",
     "postcss-nesting": "^10.1.7",
     "vue": "^3.2.25",
     "vue-router": "4"
