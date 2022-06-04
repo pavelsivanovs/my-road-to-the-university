@@ -5,8 +5,8 @@ import sourceData from '../data.json'
 
 export default {
   data() {
-    document.title = 'mans ceļš'
-
+    document.title = 'my road'
+    
     return {
       sections: sourceData.sections
     }
@@ -26,16 +26,16 @@ export default {
         <img class="logo" src="../assets/main-page-logo@2x.png" alt="Logo">
       </div>
       <div class="content-item title-wrapper">
-        <h1>mans ceļš uz universitāti</h1>
+        <h1>my road to the university</h1>
       </div>
     </div>
   </div>
 
   <div class="main">
     <div class="sections">
-      <Section v-for="{key, title} in sections"
-               :url="'/section/' + key"
-               :section-title="title"/>
+      <Section v-for="{key, title_eng} in sections"
+               :url="'/en/section/' + key"
+               :section-title="title_eng"/>
     </div>
   </div>
 </template>

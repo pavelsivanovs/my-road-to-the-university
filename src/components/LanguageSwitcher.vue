@@ -1,22 +1,24 @@
-<script setup>
-import { RouterLink } from 'vue-router';
+<script>
+export default {
+  data() {
+    const isEnglish = !this.$route.path.includes('/en')
 
-let url = document.location.pathname
-let title = "lv"
-
-if (url.substring(0, 3) != "/en") {
-    url = "/en" + url
-    title = "en"
+    const url = isEnglish ? '/en' : '/'
+    const title = isEnglish ? 'en' : 'lv'
+  
+    return {
+      url,
+      title
+    }
+  }
 }
-
-console.log(url)
 </script>
 
 <template>
 <div class="language-switcher">
-    <RouterLink class="language" :to=url>
-        {{ title }}
-    </RouterLink>
+  <router-link class="language" :to="url">
+    {{ title }}
+  </router-link>
 </div>
 </template>
 

@@ -18,7 +18,7 @@ export default {
     </RouterLink>
 </template>
 
-<style scope>
+<style scoped>
 .section {
     background-image: url(../assets/images/section-bubble.png);
     background-size: contain;

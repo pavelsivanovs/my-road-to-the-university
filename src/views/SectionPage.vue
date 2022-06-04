@@ -1,0 +1,120 @@
+<script>
+import sourceData from '@/data.json'
+
+export default {
+  data() {
+    const { key } = this.$route.params
+    const {
+      title,
+      text, 
+      image
+    } = sourceData.sections[key]
+
+    document.title = title
+    const previousRoute = document.referrer
+    
+    return {
+      title,
+      text,
+      image,
+      previousRoute
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="header">
+    <div class="hero" :style="{ backgroundImage: 'url(../src/assets/images/' + image + ')' }">
+      <div class="title-wrapper">
+        <h1 class="title">{{ title }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content-wrapper">
+      <div class="text" v-html="text"></div>
+      <router-link class="link" :to="{ name: 'Home' }">atgriezties uz galveno lapu</router-link>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.header {
+  background-color: var(--yellow);
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: var(--desktop-screen);
+  position: relative;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+.title-wrapper {
+  background-color: var(--cyan);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+  top: 95%;
+}
+
+.title {
+  font-family: KyivPost;
+  font-size: 80px;
+}
+
+.content {
+  background-color: var(--magenta);
+  padding: 50px 0;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  max-width: var(--desktop-screen);
+  /* width: fit-content; */
+}
+
+.text {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.link {
+  color: #000;
+  /* font-weight: 800; */
+  font-size: 24px;
+  text-decoration: none;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: block;
+  width: fit-content;
+  padding: 20px;
+  background-color: var(--yellow);
+  border-radius: 50px;
+}
+
+.link:hover {
+  /* font-weight: 800; */
+  /* text-decoration: underline; */
+  /* font-family: KyivPost; */
+  background-color: var(--cyan);
+}
+</style>
+
+<style>
+.text p {
+  margin: 20px 0;
+}
+</style>
+

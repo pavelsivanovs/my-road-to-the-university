@@ -1,15 +1,23 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Labdien" />
+  <RouterView/>
+  <Footer/>
 </template>
 
 <style>
+/* CSS RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* END */
+
 @font-face {
   font-family: e-Ukraine;
   src: url(./assets/fonts/e-Ukraine-Light.woff2);
@@ -40,5 +48,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #000;
+  font-size: 20px;
 }
 </style>
