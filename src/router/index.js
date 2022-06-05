@@ -37,11 +37,11 @@ const router = createRouter({
                 behavior: 'smooth'
             }
         } 
-        
+
         if (from.name.includes("Section")) {
             return {
                 el: '#main',
-                top: 0,
+                top: 20,
                 behavior: 'smooth'
             }
         }
