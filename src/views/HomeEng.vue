@@ -31,7 +31,7 @@ export default {
     </div>
   </div>
 
-  <div class="main">
+  <div id="main" class="main">
     <div class="sections">
       <Section v-for="{key, title_eng} in sections"
                :url="'/en/section/' + key"

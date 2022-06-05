@@ -36,6 +36,14 @@ const router = createRouter({
                 top: 0,
                 behavior: 'smooth'
             }
+        } 
+        
+        if (from.name.includes("Section")) {
+            return {
+                el: '#main',
+                top: 0,
+                behavior: 'smooth'
+            }
         }
     }
 })

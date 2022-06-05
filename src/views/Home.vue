@@ -31,7 +31,7 @@ export default {
     </div>
   </div>
 
-  <div class="main">
+  <div id="main" class="main">
     <div class="sections">
       <Section v-for="{key, title} in sections"
                :url="'/section/' + key"
@@ -109,7 +109,7 @@ export default {
   .title-wrapper {
     justify-content: right;
   }
-  
+
   .content .title-wrapper > h1 {
     font-size: 40px;
     text-align: right;
