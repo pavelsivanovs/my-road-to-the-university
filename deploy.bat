@@ -1,4 +1,5 @@
 :: Batch files prepares files in the \dist directory and deploys them to GitHub.
+@ECHO OFF
 
 ECHO Creating a 404.html file
 COPY dist\index.html dist\404.html
