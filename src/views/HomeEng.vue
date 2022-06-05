@@ -43,15 +43,18 @@ export default {
 <style scoped>
 .header {
   background-color: var(--yellow);
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 60px;
   margin: 0 auto;
   max-width: var(--desktop-screen);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .content-item {
@@ -60,6 +63,7 @@ export default {
 
 .logo {
   max-width: 300px;
+  width: 100%;
 }
 
 .title-wrapper {
@@ -77,17 +81,38 @@ export default {
   width: fit-content;
 }
 
+.main {
+  background-color: var(--magenta);
+  padding: 60px 20px;
+}
+
 .sections {
   display: flex;
   margin: 0 auto;
   max-width: var(--desktop-screen);
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
   gap: 20px;
 }
 
-.main {
-  background-color: var(--magenta);
-  padding: 100px 0;
+@media screen and (max-width: 768px) {
+  .content {
+    gap: 0;
+  }
+
+  .logo {
+    width: 70%;
+    float: left;
+  }
+
+  .title-wrapper {
+    justify-content: right;
+  }
+
+  .content .title-wrapper > h1 {
+    font-size: 40px;
+    text-align: right;
+  }  
 }
 </style>

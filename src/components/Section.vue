@@ -32,7 +32,7 @@ export default {
     color: #000;
     text-decoration: none;
     overflow-wrap: break-word;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .section:hover {

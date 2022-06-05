@@ -66,9 +66,13 @@ export default {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   width: fit-content;
+  line-height: 60px;
   margin: 0 auto;
   padding: 20px 20px 20px 20px;
+  text-align: left;
   top: 95%;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .title {
@@ -78,7 +82,7 @@ export default {
 
 .content {
   background-color: var(--magenta);
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .content-wrapper {
@@ -120,4 +124,3 @@ export default {
   margin: 20px 0;
 }
 </style>
-

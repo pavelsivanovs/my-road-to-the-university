@@ -106,8 +106,12 @@ export default {
     float: left;
   }
 
+  .title-wrapper {
+    justify-content: right;
+  }
+  
   .content .title-wrapper > h1 {
-    font-size: 60px;
+    font-size: 40px;
     text-align: right;
   }  
 }
